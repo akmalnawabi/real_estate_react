@@ -8,8 +8,7 @@ import { RiSearch2Line } from "react-icons/ri";
 import { HouseContext } from "./HouseContext";
 
 const Search = () => {
-  const {houses} = useContext(HouseContext);
-  console.log(houses)
+  const {handleClick} = useContext(HouseContext);
 
   return (
     <div className="px-[30px] py-6 max-w-[1170px] mx-auto flex flex-col lg:flex-row justify-between gap-4 lg:gap-x-3
@@ -17,8 +16,9 @@ const Search = () => {
       <CountryDropdown />
       <PropertyDropdown />
       <PriceRangeDropdown />
-      <button className="bg-violet-700 hover:bg-violet-800 text-white rounded-lg px-4 py-3
-       flex items-center justify-center">
+      <button onClick={() => handleClick()}
+       className="bg-violet-700 hover:bg-violet-800 text-white transition w-full lg:max-w-[142px]
+       h-14 rounded-lg text-lg flex items-center justify-center">
         <RiSearch2Line />
       </button>
     </div>
